@@ -5,8 +5,8 @@
 // @description  知乎网站 辅助工具
 // @author       gwl
 // @match        *://.*zhihu.com/*
-// @updateURL    https://github.com/gongwlin/userscript/blob/main/zh.js
-// @downloadURL  https://github.com/gongwlin/userscript/blob/main/zh.js
+// @updateURL    https://github.com/gongwlin/userscript/blob/main/zh.user.js
+// @downloadURL  https://github.com/gongwlin/userscript/blob/main/zh.user.js
 // @grant        none
 // ==/UserScript==
 
