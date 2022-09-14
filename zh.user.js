@@ -4,7 +4,7 @@
 // @version      1.1.1
 // @description  知乎网站 辅助工具
 // @author       gwl
-// @match        *://.*zhihu.com/*
+// @match        *://zhihu.com/*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/zh.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/zh.user.js
 // @grant        none
