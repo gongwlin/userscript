@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         github网站 辅助工具
 // @namespace    https://github.com/
-// @version      1.0.0
+// @version      1.1.0
 // @description  github 辅助工具
 // @author       gwl
-// @include     *://*github.com/*
+// @include     *://*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/github.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/github.user.js
 // @grant        none
@@ -29,10 +29,11 @@
   document.body.appendChild(cssDom);
 
   const dom = document.createElement('div');
-  dom.innerHTML = `<div class="script"></div>`;
+  dom.innerHTML = `<div class="script">TOP</div>`;
 
   dom.addEventListener('click', function (e) {
-    console.log('click', e)
+    console.log('click', e);
+    window.scrollTo(0, 0);
   })
 
   document.body.appendChild(dom)
