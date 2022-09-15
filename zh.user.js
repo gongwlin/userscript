@@ -13,6 +13,8 @@
 (function () {
   console.log("zhihu script running...");
 
+  
+
   window.addEventListener('click', function (e) {
     const href = e.target?.href || '';
     if (href?.indexOf('https://link.zhihu.com/?target=') !== -1) {
