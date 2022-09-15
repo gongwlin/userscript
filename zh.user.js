@@ -4,7 +4,7 @@
 // @version      1.2.0
 // @description  知乎网站 辅助工具
 // @author       gwl
-// @match        *://*zhihu.com/*
+// @include        *://*zhihu.com/*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/zh.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/zh.user.js
 // @grant        none
@@ -12,8 +12,6 @@
 
 (function () {
   console.log("zhihu script running...");
-
-  
 
   window.addEventListener('click', function (e) {
     const href = e.target?.href || '';
