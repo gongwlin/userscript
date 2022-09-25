@@ -30,6 +30,10 @@ const icons = {
    */
   // toolbox
   function insertToolbox() {
+    // 在iframe中
+    if(unsafeWindow.self != unsafeWindow.top) {
+      return;
+    }
     // 没有滚动条
     if(getScrollValue('scrollHeight') == getScrollValue('clientHeight')) {
       return;
