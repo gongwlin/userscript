@@ -9,7 +9,7 @@
 // @grant        none
 // ==/UserScript==
 
-document.onload = function () {
+window.onload = function () {
   const node = document.querySelector('#content_right');
   console.log('remove')
   if (node) {
