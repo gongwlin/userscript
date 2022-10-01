@@ -9,11 +9,15 @@
 // @grant        none
 // ==/UserScript==
 
-window.onload = function () {
+const node = document.querySelector('#content_right');
+if (node) {
+  node.parentNode.removeChild(node)
+}
+
+document.body.addEventListener('DOMSubtreeModified', function () {
   const node = document.querySelector('#content_right');
-  console.log('remove')
   if (node) {
     node.parentNode.removeChild(node)
   }
-}
+})
 
