@@ -9,7 +9,11 @@
 // @grant        none
 // ==/UserScript==
 
-const node = document.querySelector('#content_right')
-if (node) {
-  node.parentNode.removeChild(node)
+document.onload = function () {
+  const node = document.querySelector('#content_right');
+  console.log('remove')
+  if (node) {
+    node.parentNode.removeChild(node)
+  }
 }
+
