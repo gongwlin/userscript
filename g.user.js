@@ -35,9 +35,9 @@ const icons = {
       return;
     }
     // 没有滚动条
-    if(getScrollValue('scrollHeight') == getScrollValue('clientHeight')) {
-      return;
-    }
+    // if(getScrollValue('scrollHeight') == getScrollValue('clientHeight')) {
+    //  return;
+    // }
     const toolbox = document.querySelector('#userscript-scroll-toolbox');
     if(toolbox) {
       return;
