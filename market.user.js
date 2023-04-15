@@ -17,10 +17,20 @@ document.body.addEventListener('DOMSubtreeModified', function () {
     node.style.display = 'none'
   }
   
+  const countDown = document.querySelector('#count-down-1');
+  if (countDown) {
+    countDown.style.display = 'none'
+  }
+  
   setTimeout(() => {
     const dom = document.querySelector('.ad-individual-20s');
     if (dom) {
       dom.style.display = 'none'
+    };
+    
+    const countDownDom = document.querySelector('#count-down-1');
+    if (countDownDom) {
+      countDownDom.style.display = 'none'
     }
   }, 3000)
 })
