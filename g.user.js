@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.6.0
+// @version      1.7.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -152,14 +152,20 @@ const icons = {
     })
   }
   let scrollRequestID;
+  let preTimeStamp = Date.now();
+
   function read(event) {
     if(scrollRequestID) {
       stopRead();
     } else {
       function scroll() {
-        unsafeWindow.scrollBy({
-          top: 0.5
-        });
+        if (Date.now() - preTimeStamp > (window?.diffTime || 100)) {
+          window.scrollBy({
+          top: 1
+        })
+        preTimeStamp = Date.now();
+      }
+        
         if(getScrollValue('scrollHeight') - getScrollValue('scrollTop') <= getScrollValue('clientHeight') + 6) {
           stopRead();
         } else {
