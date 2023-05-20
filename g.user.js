@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.5.0
+// @version      1.6.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -158,7 +158,7 @@ const icons = {
     } else {
       function scroll() {
         unsafeWindow.scrollBy({
-          top: 0.3
+          top: 0.5
         });
         if(getScrollValue('scrollHeight') - getScrollValue('scrollTop') <= getScrollValue('clientHeight') + 6) {
           stopRead();
