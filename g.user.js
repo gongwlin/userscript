@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.7.0
+// @version      1.8.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -159,7 +159,8 @@ const icons = {
       stopRead();
     } else {
       function scroll() {
-        if (Date.now() - preTimeStamp > (window?.diffTime || 100)) {
+        if (Date.now() - preTimeStamp > (unsafeWindow?.diffTime || 100)) {
+          console.log('diffTime---', unsafeWindow?.diffTime);
           window.scrollBy({
           top: 1
         })
