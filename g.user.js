@@ -42,15 +42,13 @@ const icons = {
     if(toolbox) {
       return;
     }
-    GM_setValue('clientX', 0);
-    GM_setValue('clientY', 1000);
-    const clientX = GM_getValue('clientX');
-    const clientY = GM_getValue('clientY');
+      console.log(unsafeWindow.screen);
+    const clientX = unsafeWindow.screen.width - 100;
     const box = document.createElement('div');
     box.id = 'userscript-scroll-toolbox';
     box.draggable = true;
     box.ondragend = moveToolbox;
-    setToolboxPosition(box, clientX, clientY);
+    setToolboxPosition(box, clientX, 0);
     const fragment = document.createDocumentFragment();
     const list = ['top', 'bottom', 'read'];
     list.forEach(ele => {
@@ -132,6 +130,9 @@ const icons = {
     if(clientY) {
       element.style.top = `${clientY}px`;
       element.style.bottom = 'unset';
+    } else {
+      element.style.top = 'unset';
+      element.style.bottom = '0';
     }
   }
   const eventFuncList = {
@@ -168,7 +169,6 @@ const icons = {
         })
         preTimeStamp = Date.now();
       }
-        
         if(getScrollValue('scrollHeight') - getScrollValue('scrollTop') <= getScrollValue('clientHeight') + 6) {
           stopRead();
         } else {
