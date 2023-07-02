@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.8.0
+// @version      1.9.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -42,6 +42,8 @@ const icons = {
     if(toolbox) {
       return;
     }
+    GM_setValue('clientX', 0);
+    GM_setValue('clientY', 1000);
     const clientX = GM_getValue('clientX');
     const clientY = GM_getValue('clientY');
     const box = document.createElement('div');
