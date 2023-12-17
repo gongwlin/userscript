@@ -7,6 +7,8 @@
 // @description  网站辅助工具
 // @author       gwl
 // @match        *://*/*
+// @exclude      *://localhost*/*
+// @exclude      *://127.0.0.1*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
 // @grant        GM_log
 // @grant        GM_addStyle
