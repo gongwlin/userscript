@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.9.1
+// @version      1.9.2
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -9,6 +9,7 @@
 // @match        *://*/*
 // @exclude      *://localhost*/*
 // @exclude      *://127.0.0.1*/*
+// @exclude      *://test.ds.163.com*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
 // @grant        GM_log
 // @grant        GM_addStyle
