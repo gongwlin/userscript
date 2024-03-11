@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         去除市场宽度的广告
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.1.1
+// @version      1.1.2
 // @author       gwl
 // @include        *://*legulegu.com/stockdata/*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/market.user.js
@@ -24,7 +24,14 @@ document.body.addEventListener('DOMSubtreeModified', function () {
       countDown.style.display = 'none'
     }
   }
+
+   setTimeout(() => {
+    fn();
+  }, 1000);
   
+  setTimeout(() => {
+    fn();
+  }, 2000);
   
   setTimeout(() => {
     fn();
