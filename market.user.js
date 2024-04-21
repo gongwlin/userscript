@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name         去除市场宽度的广告
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.1.2
+// @version      1.1.3
 // @author       gwl
-// @include        *://*legulegu.com/stockdata/*
+// @include        *://*legulegu.com/*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/market.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/market.user.js
 // @grant        none
