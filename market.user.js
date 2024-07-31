@@ -10,15 +10,13 @@
 // ==/UserScript==
 
 
-
-document.body.addEventListener('DOMSubtreeModified', function () {
-
+function f () {
   const fn = () => {
     const node = document.querySelector('#ad-individual-20s-1');
     if (node) {
       node.style.display = 'none'
     }
-  
+
     const countDown = document.querySelector('#count-down-1');
     if (countDown) {
       countDown.style.display = 'none'
@@ -28,15 +26,18 @@ document.body.addEventListener('DOMSubtreeModified', function () {
    setTimeout(() => {
     fn();
   }, 1000);
-  
+
   setTimeout(() => {
     fn();
   }, 2000);
-  
+
   setTimeout(() => {
     fn();
   }, 3000)
-})
+ }
 
+
+
+window.onload = f();
 
 
