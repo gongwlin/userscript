@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         去除百度无用内容
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.0
+// @version      1.0.1
 // @author       gwl
 // @include        *://*baidu.com/s*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/bd.user.js
