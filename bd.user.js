@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         去除百度无用内容
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.1
+// @version      1.0.2
 // @author       gwl
 // @include        *://*baidu.com/s*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/bd.user.js
@@ -16,14 +16,14 @@ function fn () {
   }
 }
 
-window.onload = function () {
-  fn();
 
-  setTimeout(() => {
-    fn();
-  }, 1000)
+const id = setInterval(() => {
+  fn()
+}, 1000);
 
-  setTimeout(() => {
-    fn();
-  }, 2000)
+
+window.onbeforeunload = function () {
+  if (id) {
+    clearInterval(id)
+  }
 }
