@@ -9,7 +9,7 @@
 // @match        *://weread.qq.com*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
 // @grant        GM_log
-// @grant        GM_`addStyle
+// @grant        GM_addStyle
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        unsafeWindow
