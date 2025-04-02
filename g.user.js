@@ -1,25 +1,29 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.9.3
+// @version      1.9.4
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
 // @author       gwl
-// @match        *://*/*
-// @exclude      *://localhost*/*
-// @exclude      *://jingyong.site*/*
-// @exclude      *://127.0.0.1*/*
-// @exclude      *://test.ds.163.com*/*
+// @match        *://weread.qq.com*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
 // @grant        GM_log
-// @grant        GM_addStyle
+// @grant        GM_`addStyle
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        unsafeWindow
 // @run-at       document-start
 // @license      MIT
 // ==/UserScript==
+
+const temp = `
+// @match        *://*/*
+// @exclude      *://localhost*/*
+// @exclude      *://jingyong.site*/*
+// @exclude      *://127.0.0.1*/*
+// @exclude      *://test.ds.163.com*/*
+`
 
 const icons = {
   top: '<svg t="1663837134829" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1076" width="32" height="32"><path d="M153.6 815.786667c-6.826667 0-17.066667-3.413333-23.893333-6.826667-17.066667-6.826667-27.306667-23.893333-27.306667-44.373333v-129.706667c0-13.653333 6.826667-27.306667 17.066667-37.546667l368.64-334.506666c13.653333-10.24 34.133333-10.24 44.373333 0l368.64 337.92c10.24 10.24 17.066667 23.893333 17.066667 37.546666v98.986667c0 17.066667-10.24 34.133333-23.893334 44.373333-17.066667 10.24-34.133333 10.24-51.2 0l-283.306666-157.013333c-17.066667-10.24-23.893333-30.72-13.653334-47.786667 10.24-17.066667 30.72-23.893333 47.786667-13.653333l256 143.36v-64.853333L512 331.093333 170.666667 641.706667v92.16l252.586666-170.666667c17.066667-10.24 37.546667-6.826667 47.786667 10.24s6.826667 37.546667-10.24 47.786667l-279.893333 187.733333c-6.826667 6.826667-17.066667 6.826667-27.306667 6.826667z" fill="#9850FF" p-id="1077"></path></svg>',
