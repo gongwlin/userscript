@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安娜自动下载
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.1.0
+// @version      1.2.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @description  安娜自动下载
@@ -18,7 +18,6 @@
 
 
 const id = setInterval(() => {
-    console.log('start countdown')
     const dom = document.querySelector('.mb-4.text-xl.font-bold a');
     if (dom) {
         dom.click();
