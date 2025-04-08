@@ -1,12 +1,17 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.9.4
+// @version      1.9.5
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
 // @author       gwl
-// @match        *://weread.qq.com*/*
+// @match        *://*/*
+// @exclude      *://localhost*/*
+// @exclude      *://jingyong.site*/*
+// @exclude      *://127.0.0.1*/*
+// @exclude      *://test.ds.163.com*/*
+// @exclude      *://teams.microsoft.com*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
 // @grant        GM_log
 // @grant        GM_addStyle
@@ -62,6 +67,12 @@ const icons = {
       const button = document.createElement('div');
       button.className = 'tool-btn';
       button.addEventListener('click', eventFuncList[ele]);
+      if (ele === 'top') {
+        function dbclick() {
+          toolbox.style.display = 'none';
+        }
+        button.addEventListener('dblclick', dbclick,false)
+      }
       const icon = document.createElement('div');
       icon.id = `tool-${ele}`;
       icon.className = 'tool-icon';
@@ -170,9 +181,9 @@ const icons = {
     } else {
       function scroll() {
         if (Date.now() - preTimeStamp > (unsafeWindow?.diffTime || 100)) {
-          console.log('diffTime---', unsafeWindow?.diffTime);
+          // console.log('diffTime---', unsafeWindow?.diffTime);
           window.scrollBy({
-          top: 1
+          top: 3
         })
         preTimeStamp = Date.now();
       }
