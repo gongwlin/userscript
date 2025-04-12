@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.9.8
+// @version      1.9.9
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -10,6 +10,7 @@
 // @exclude      *://localhost*/*
 // @exclude      *://jingyong.site*/*
 // @exclude      *://127.0.0.1*/*
+// @exclude      *://43.134.45.229*/*·
 // @exclude      *://test.ds.163.com*/*
 // @exclude      *://teams.microsoft.com*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
