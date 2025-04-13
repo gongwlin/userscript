@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.9.9
+// @version      2.0.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -42,6 +42,7 @@ const icons = {
    * html
    */
   // toolbox
+  let speed = 20;
   function insertToolbox() {
     const key = unsafeWindow?.location.host;
     if (localStorage.getItem(key) === '1') { // 已关闭
@@ -60,7 +61,6 @@ const icons = {
       return;
     }
     const clientX = unsafeWindow.screen.width - 100;
-    let speed = 20;
     const box = document.createElement('div');
     box.id = 'userscript-scroll-toolbox';
     box.draggable = true;
