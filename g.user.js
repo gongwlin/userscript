@@ -8,10 +8,8 @@
 // @author       gwl
 // @match        *://*/*
 // @exclude      *://localhost*/*
-// @exclude      *://jingyong.site*/*
 // @exclude      *://127.0.0.1*/*
-// @exclude      *://43.134.45.229*/*·
-// @exclude      *://test.ds.163.com*/*
+// @exclude      *://43.134.45.229*/*
 // @exclude      *://teams.microsoft.com*/*
 // @icon         https://github.com/gongwlin/userscript/raw/main/assets/scroll.ico
 // @grant        GM_log
@@ -45,6 +43,10 @@ const icons = {
    */
   // toolbox
   function insertToolbox() {
+    const key = unsafeWindow?.location.host;
+    if (localStorage.getItem(key) === '1') { // 已关闭
+      return
+    }
     // 在iframe中
     if(unsafeWindow.self != unsafeWindow.top) {
       return;
@@ -58,6 +60,7 @@ const icons = {
       return;
     }
     const clientX = unsafeWindow.screen.width - 100;
+    let speed = 20;
     const box = document.createElement('div');
     box.id = 'userscript-scroll-toolbox';
     box.draggable = true;
@@ -65,10 +68,20 @@ const icons = {
     setToolboxPosition(box, clientX, 0);
     const fragment = document.createDocumentFragment();
     const list = ['top', 'bottom', 'read', 'close'];
+
+    function speedUp() {
+      speed += 10;
+    }
+
     list.forEach(ele => {
       const button = document.createElement('div');
       button.className = 'tool-btn';
       button.addEventListener('click', eventFuncList[ele]);
+
+      if (ele === 'bottom') {
+        button.addEventListener('dblclick', speedUp)
+      }
+
       const icon = document.createElement('div');
       icon.id = `tool-${ele}`;
       icon.className = 'tool-icon';
@@ -160,6 +173,7 @@ const icons = {
     const toolbox = document.querySelector('#userscript-scroll-toolbox');
     if (toolbox) {
       toolbox.style.display = 'none';
+      localStorage.setItem(window.location.host, '1')
     }
 
   }
@@ -185,12 +199,13 @@ const icons = {
       stopRead();
     } else {
       function scroll() {
-        if (Date.now() - preTimeStamp > (unsafeWindow?.diffTime || 1000)) {
-          // console.log('diffTime---', unsafeWindow?.diffTime);
-          window.scrollBy({
-          top: 40,
-          behavior: "smooth"
-        })
+        if (Date.now() - preTimeStamp > 1000) {
+        const newY = unsafeWindow.pageYOffset + speed;
+        window.scrollTo({
+          top: newY,
+          behavior: 'smooth' // 使用浏览器原生平滑滚动
+      });
+
         preTimeStamp = Date.now();
       }
         if(getScrollValue('scrollHeight') - getScrollValue('scrollTop') <= getScrollValue('clientHeight') + 6) {
