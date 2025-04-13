@@ -42,7 +42,7 @@ const icons = {
    * html
    */
   // toolbox
-  let speed = 20;
+  let speed = 100;
   function insertToolbox() {
     const key = unsafeWindow?.location.host;
     if (localStorage.getItem(key) === '1') { // 已关闭
@@ -70,7 +70,7 @@ const icons = {
     const list = ['top', 'bottom', 'read', 'close'];
 
     function speedUp() {
-      speed += 10;
+      speed += 50;
     }
 
     list.forEach(ele => {
