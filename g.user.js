@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      2.0.0
+// @version      2.0.1
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -78,7 +78,7 @@ const icons = {
       button.className = 'tool-btn';
       button.addEventListener('click', eventFuncList[ele]);
 
-      if (ele === 'bottom') {
+      if (ele === 'read') {
         button.addEventListener('dblclick', speedUp)
       }
 
