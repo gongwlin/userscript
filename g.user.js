@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         网站辅助工具
 // @namespace    https://github.com/gongwlin/userscript
-// @version      2.0.1
+// @version      2.0.2
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/g.user.js
 // @description  网站辅助工具
@@ -42,7 +42,7 @@ const icons = {
    * html
    */
   // toolbox
-  let speed = 100;
+  let speed = 15;
   function insertToolbox() {
     const key = unsafeWindow?.location.host;
     if (localStorage.getItem(key) === '1') { // 已关闭
@@ -70,7 +70,7 @@ const icons = {
     const list = ['top', 'bottom', 'read', 'close'];
 
     function speedUp() {
-      speed += 50;
+      speed += 10;
     }
 
     list.forEach(ele => {
