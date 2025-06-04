@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         um sso
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.0
+// @version      1.1.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/um_sso.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/um_sso.user.js
 // @description  um
 // @author       gwl
 // @include      *://*sso-umlib.um.edu.my*
+// @include      *://*sso.um.edu.my*
 // @grant        GM_log
 // @grant        GM_addStyle
 // @grant        GM_setValue
