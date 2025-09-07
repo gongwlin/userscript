@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安娜自动下载
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.3.1
+// @version      1.3.2
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @description  安娜自动下载
@@ -13,6 +13,8 @@
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @grant        unsafeWindow
+// @grant        GM_setClipboard
+
 // @run-at       document-start
 // @license      MIT
 // ==/UserScript==
@@ -28,7 +30,7 @@ const id = setInterval(() => {
 
 
 const id2 = setInterval(() => {
-    const list =  document.querySelectorAll('.list-inside')?.[1];
+    const list = document.querySelectorAll('.list-inside')?.[1];
     if (!list) {
         return
     }
@@ -46,12 +48,8 @@ const yzm = setInterval(() => {
         return
     }
     setTimeout(() => {
-        navigator.clipboard.writeText('captchaxyz').then(() => {
-                clearInterval(yzm);
-            }).catch((e) => {
-                clearInterval(yzm);
-            });
-    }, 1e3)
-    
+        GM_setClipboard('captchaxyz')
+        clearInterval(yzm);
+    }, 5e2)
 
 }, 1e3)
