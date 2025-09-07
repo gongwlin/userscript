@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安娜自动下载
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.3.2
+// @version      1.3.4
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @description  安娜自动下载
@@ -48,4 +48,4 @@ const yzm = setInterval(() => {
     }
     GM_setClipboard('captchaxyz');
 
-}, 2e3)
+}, 1e3)
