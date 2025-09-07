@@ -7,7 +7,7 @@
 // @description  安娜自动下载
 // @author       gwl
 // @include      *://*annas-archive.org/slow_download/*
-// @include      *://*zh.annas-archive.org/md5/*
+// @include      *://*annas-archive.org/md5/*
 // @grant        GM_log
 // @grant        GM_addStyle
 // @grant        GM_setValue
