@@ -35,7 +35,6 @@ const id2 = setInterval(() => {
         return
     }
     const dom = list.querySelector('.list-disc a')
-    console.log(dom)
     if (dom) {
         dom.click();
         clearInterval(id2);
@@ -47,9 +46,6 @@ const yzm = setInterval(() => {
     if (!dom) {
         return
     }
-    setTimeout(() => {
-        GM_setClipboard('captchaxyz');
-        clearInterval(yzm);
-    }, 5e2)
+    GM_setClipboard('captchaxyz');
 
-}, 1e3)
+}, 2e3)
