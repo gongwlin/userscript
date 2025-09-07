@@ -45,10 +45,13 @@ const yzm = setInterval(() => {
     if (!dom) {
         return
     }
-    navigator.clipboard.writeText('captcha@xyz').then(() => {
-        clearInterval(yzm);
-    }).catch(() => {
-        alert('复制失败');
-    });
+    setTimeout(() => {
+        navigator.clipboard.writeText('captchaxyz').then(() => {
+                clearInterval(yzm);
+            }).catch((e) => {
+                clearInterval(yzm);
+            });
+    }, 1e3)
+    
 
 }, 1e3)
