@@ -45,7 +45,9 @@ const yzm = setInterval(() => {
     if (!dom) {
         return
     }
-    navigator.clipboard.writeText(`captcha`).catch(() => {
+    navigator.clipboard.writeText('captcha@xyz').then(() => {
+        clearInterval(yzm);
+    }).catch(() => {
         alert('复制失败');
     });
 
