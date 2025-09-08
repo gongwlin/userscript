@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安娜自动下载
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.3.4
+// @version      1.3.5
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @description  安娜自动下载
@@ -42,7 +42,7 @@ const id2 = setInterval(() => {
 }, 1e3)
 
 const yzm = setInterval(() => {
-    const dom = document.querySelector('#LsMgo8');
+    const dom = document.querySelector('.zone-name-title');
     if (!dom) {
         return
     }
