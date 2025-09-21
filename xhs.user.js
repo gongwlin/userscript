@@ -6,7 +6,7 @@
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
 // @author       gwl
-// @include      *://xiaohongshu.com/explore*
+// @include      https://*xiaohongshu.com/explore*
 
 // @grant        GM_log
 // @grant        unsafeWindow
@@ -16,9 +16,11 @@
 // ==/UserScript==
 
 
-setInterval(() => {
+const id = setInterval(() => {
   const url = window.location.href;
+  console.log('==============')
   if (url.indexOf('xsec_token') > 0) {
+    clearInterval(id)
     return;
   }
   console.log('---------')
