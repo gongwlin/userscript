@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         小红书防沉迷，只展示前10个帖子
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.6
+// @version      0.0.7
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
