@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         小红书防沉迷，只展示前10个帖子
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.8
+// @version      0.0.9
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
@@ -22,5 +22,5 @@ const id = setInterval(() => {
     return;
   }
   const list = document.querySelector('#exploreFeeds').children;
-  Array.from(list).forEach((v, i) => {if (i > 6) v.remove()});
+  Array.from(list).forEach((v, i) => {if (i > 8) v.remove()});
 }, 500)
