@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .xhs_b {
+      position: fixed;
+      display: flex;
+      bottom: 20px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border-radius: 50%;
+      background-color: brown;
+    }
+  </style>
+  <div class="xhs_b" style="position: fixed;display: flex;bottom: 20px;right: 20px;width: 30px;height: 30px;cursor: pointer;border-radius: 50%;background-color: brown;"  onclick=""></div>
+  <script>
+    const list = 'position: fixed;display: flex;bottom: 20px;right: 20px;width: 30px;height: 30px;cursor: pointer;border-radius: 50%;background-color: brown;'
+    const l = list.split(';').filter(Boolean);
+    const oc = {};
+    const aaa = document.createElement('div');
+    l.forEach(v => { const [key, val] = v.split(':'); oc[key] = val.replaceAll(' ', '')  });
+    Object.keys(oc).forEach((k) => { aaa.style[k] = oc[k]  });
+    document.body.appendChild(aaa);
+
+    
+
+
+
+  </script>
+</body>
+</html>
