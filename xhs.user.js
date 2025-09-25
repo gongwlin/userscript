@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         小红书防沉迷，只展示前10个帖子
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.1
+// @version      1.0.2
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
@@ -22,7 +22,7 @@ const xhs_timerId = setInterval(() => {
     return;
   }
   const ll = document.querySelector('#exploreFeeds').children;
-  Array.from(ll).forEach((v, i) => {if (i > 7) v.remove()});
+  Array.from(ll).forEach((v, i) => {if (i > 10) v.remove()});
 }, 500)
 
 
@@ -31,7 +31,6 @@ const prop = attribute.split(';').filter(Boolean);
 const occc = {};
 const aaa = document.createElement('div');
 aaa.onclick = function () {
-  alert(123)
   clearInterval(xhs_timerId)
 }
 prop.forEach(v => { const [key, val] = v.split(':'); occc[key] = val.replaceAll(' ', '')  });
