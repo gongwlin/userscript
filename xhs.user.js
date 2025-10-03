@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         小红书防沉迷，只展示前10个帖子
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.5
+// @version      1.0.6
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
@@ -55,6 +55,10 @@ if (/xiaohongshu\.com/.test(url)) {
 
 if (/bilibili\.com/.test(url)) {
 	setInterval(() => {
+		const d = document.querySelector('.feed2')
+		if (d) {
+				d.style.visibility = 'hidden';
+		}
 		document
 			.querySelectorAll(".feed-card")
 			.forEach((v) => {
