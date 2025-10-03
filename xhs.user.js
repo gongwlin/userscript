@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         小红书防沉迷，只展示前10个帖子
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.3
+// @version      1.0.4
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
@@ -28,7 +28,7 @@ if (/xiaohongshu\.com/.test(url)) {
 		}
 		const ll = feedsDom.children;
 		Array.from(ll).forEach((v, i) => {
-			if (i > 6) {
+			if (i > 10) {
 				v.style.opacity = 0;
 			}
 		});
