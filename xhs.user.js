@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         小红书防沉迷，只展示前10个帖子
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.6
+// @version      1.0.8
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/xhs.user.js
 // @description  小红书防沉迷，只展示前10个帖子
@@ -59,11 +59,11 @@ if (/bilibili\.com/.test(url)) {
 		if (d) {
 				d.style.visibility = 'hidden';
 		}
-		document
-			.querySelectorAll(".feed-card")
-			.forEach((v) => {
-				// v.style.opacity = 0;
-				v.style.visibility = 'hidden';
-			});
+		// document
+		// 	.querySelectorAll(".feed-card")
+		// 	.forEach((v) => {
+		// 		// v.style.opacity = 0;
+		// 		v.style.visibility = 'hidden';
+		// 	});
 	}, 200);
 }
