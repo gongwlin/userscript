@@ -46,7 +46,7 @@ const yzm = setInterval(() => {
     if (!dom) {
         return
     }
-    GM_setClipboard('captchaxyz');
+    GM_setClipboard('@@captchaxyz');
     setTimeout(() => {
         clearInterval(yzm)
     }, 10e3)
