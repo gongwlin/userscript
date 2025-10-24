@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.4
+// @version      0.0.5
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -21,5 +21,5 @@
 
 setTimeout(() => {
    GM_setClipboard('@@removeyb');
-}, 3e3)
+}, 1e3)
 
