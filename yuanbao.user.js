@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.5
+// @version      0.0.6
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -19,7 +19,20 @@
 // @license      MIT
 // ==/UserScript==
 
-setTimeout(() => {
-   GM_setClipboard('@@removeyb');
-}, 1e3)
+function m() {
+   const v = GM_getValue('ybdate');
+   const today = (new Date()).getDate();
+   const s = String(today);
+   if (v === s) {
+      return
+   }
+   GM_setValue('ybdate', s)
+   setTimeout(() => {
+      GM_setClipboard('@@removeyb');
+   }, 1e3)
+   
+}
+
+m()
+
 
