@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.8
+// @version      0.0.9
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -21,12 +21,15 @@
 
 function m() {
 	const v = GM_getValue("ybdate");
+	const count = GM_getValue("ybcount");
 	const today = new Date().getDate();
 	const s = String(today);
-	if (v === s) {
+	const countNum = Number(count || '0');
+	if (v === s && countNum >= 2) {
 		return;
 	}
 	GM_setValue("ybdate", s);
+	GM_setValue("ybcount", String(countNum + 1));
 	setTimeout(() => {
 		GM_setClipboard("@@removeyb");
 	}, 1e3);

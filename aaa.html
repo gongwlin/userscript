@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anti-Crawler Demo Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        p { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Anti-Crawler Demo</h1>
+    <p>This is a simple page that demonstrates anti-debugging techniques to deter crawlers or manual inspection via DevTools.</p>
+    <p>If you open the browser console (F12), the page will freeze due to the anti-debug script.</p>
+    <div id="content">Dynamic content will load here if not debugged.</div>
+
+    <script>
+        // Anti-Debugging Script: Detects if DevTools is open by using debugger and timing checks
+
+        // Function to check for debugging
+        function antiDebug() {
+            var startTime = performance.now();
+            debugger;  // This will pause if DevTools is open
+            var endTime = performance.now();
+            
+            // If paused for more than 100ms, assume DevTools is open
+            if (endTime - startTime > 100) {
+                // Freeze the page with an infinite loop
+                while (true) {}
+                // Alternatively, you could clear the page or redirect:
+                // document.body.innerHTML = '<h1>Debugging Detected! Page Frozen.</h1>';
+            }
+        }
+
+        // Run the check immediately
+        antiDebug();
+
+        // Also run periodically to catch if DevTools is opened later
+        setInterval(antiDebug, 1000);
+
+        // If no debugging detected, load normal content
+        document.getElementById('content').innerHTML = '<p>Page loaded successfully without debugging!</p>';
+    </script>
+</body>
+</html>
