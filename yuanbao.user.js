@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.1`
+// @version      1.0.2
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
