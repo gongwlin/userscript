@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.0
+// @version      1.0.1`
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -19,30 +19,9 @@
 // @license      MIT
 // ==/UserScript==
 
-// function m() {
-// 	const v = GM_getValue("ybdate");
-// 	const count = GM_getValue("ybcount");
-// 	const today = new Date().getDate();
-// 	const s = String(today);
-// 	const countNum = Number(count || '0');
-// 	if (v === s && countNum >= 2) {
-// 		return;
-// 	}
-// 	GM_setValue("ybdate", s);
-// 	GM_setValue("ybcount", String(countNum + 1));
-// 	setTimeout(() => {
-// 		GM_setClipboard("@@removeyb");
-// 	}, 1e3);
-
-// 	setTimeout(() => {
-// 		GM_setClipboard("@@removeyb");
-// 	}, 3e3);
-// }
-
-// m();
-
 
 function r () {
+	window.alert('123yuanbao')
 	const v = GM_getValue("ybdate");
 	const count = GM_getValue("ybcount");
 	const today = new Date().getDate();
