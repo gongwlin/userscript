@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         yb remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.1
-// @updateURL    https://github.com/gongwlin/userscript/raw/main/by.user.js
+// @version      0.0.2
+// @updateURL    https://github.com/gongwlin/userscript/raw/main/yb.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yb.user.js
 // @description  yb remove
 // @author       gwl
-// @include      *://*yuanbao.tencent.com/chat*
+// @match       *://*/*
 
 // @grant        GM_log
 // @grant        GM_addStyle
@@ -18,6 +18,28 @@
 // @run-at       document-start
 // @license      MIT
 // ==/UserScript==
+
+// 检查不同执行时机的差异
+(function() {
+    'use strict';
+    // @include      *://*yuanbao.tencent.com/chat*
+    alert('📄 DOM准备状态:', document.readyState);
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('🔹 DOMContentLoaded后执行');
+            initScript();
+        });
+    } else {
+        console.log('🔹 DOM已加载，直接执行');
+        initScript();
+    }
+    
+    function initScript() {
+        console.log('🚀 脚本主逻辑开始');
+        // 你的主要代码
+    }
+})();
 
 
 function r() {
