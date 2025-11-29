@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         remove ad test
-// @version      0.0.1
-// @match        https://www.baidu.com/*
+// @version      0.0.2
+// @match        https://*baidu.com/*
 // @grant        none
 // @run-at       document-end
 // ==/UserScript==
 
 console.log('🐵 油猴脚本测试 - 最简单版本');
-
+alert(123)
 // 等待页面完全加载
 window.addEventListener('load', function() {
     console.log('📄 页面完全加载完成');
