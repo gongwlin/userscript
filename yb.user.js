@@ -1,10 +1,10 @@
 // ==UserScript==
-// @name         yb remove
+// @name         yb remove ad
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.2
+// @version      0.0.3
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yb.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yb.user.js
-// @description  yb remove
+// @description  yb remove ad
 // @author       gwl
 // @match       *://*/*
 
@@ -15,7 +15,7 @@
 // @grant        unsafeWindow
 // @grant        GM_setClipboard
 
-// @run-at       document-start
+// @run-at       document-end
 // @license      MIT
 // ==/UserScript==
 
