@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.2
+// @version      1.0.3
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -21,7 +21,6 @@
 
 
 function r () {
-	window.alert('123yuanbao')
 	const v = GM_getValue("ybdate");
 	const count = GM_getValue("ybcount");
 	const today = new Date().getDate();
