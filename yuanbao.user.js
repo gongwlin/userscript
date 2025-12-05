@@ -1,12 +1,13 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.9
+// @version      2.0.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
 // @author       gwl
 // @include      *://*yuanbao.tencent.com/chat*
+// @include      *://*ahhhhfs.com/*
 
 // @grant        GM_log
 // @grant        GM_addStyle
@@ -19,7 +20,10 @@
 // @license      MIT
 // ==/UserScript==
 
-function m() {
+function yb() {
+	if (/ahhhhfs\.com/.test(window.location.href)) {
+		return;
+	}
 	const v = GM_getValue("ybdate");
 	const count = GM_getValue("ybcount");
 	const today = new Date().getDate();
@@ -30,13 +34,21 @@ function m() {
 	}
 	GM_setValue("ybdate", s);
 	GM_setValue("ybcount", String(countNum + 1));
-	setTimeout(() => {
-		GM_setClipboard("@@removeyb");
-	}, 1e3);
-
-	setTimeout(() => {
-		GM_setClipboard("@@removeyb");
-	}, 3e3);
 }
 
-m();
+function ahhhhfs() {
+	if (/yuanbao.tencent\.com/.test(window.location.href)) {
+		return;
+	}
+	setInterval(() => {
+		const d = document.querySelector('.fc-message-root')
+		if (d) {
+			document.body.removeChild(d);
+			document.body.style.overflow = 'auto';
+		}
+	}, 1e3)
+}
+
+yb();
+ahhhhfs();
+
