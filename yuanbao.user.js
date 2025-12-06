@@ -1,13 +1,16 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.4
+// @version      1.0.5
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
 // @author       gwl
 // @include      *://*yuanbao.tencent.com/chat*
 // @include      *://*ahhhhfs.com/*
+// @include      *://*ebooksyard.com/*
+
+
 
 // @grant        GM_log
 // @grant        GM_addStyle
@@ -21,7 +24,7 @@
 // ==/UserScript==
 
 function yb() {
-	if (/ahhhhfs\.com/.test(window.location.href)) {
+	if (!/yuanbao.tencent\.com/.test(window.location.href)) {
 		return;
 	}
 	const v = GM_getValue("ybdate");
