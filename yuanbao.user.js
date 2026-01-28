@@ -27,21 +27,13 @@ function yb() {
 	if (!/yuanbao.tencent\.com/.test(window.location.href)) {
 		return;
 	}
-	const v = GM_getValue("ybdate");
-	const count = GM_getValue("ybcount");
-	const today = new Date().getDate();
-	const s = String(today);
-	const countNum = Number(count || '0');
-	if (v === s && countNum >= 2) {
-		return;
-	}
-	GM_setValue("ybdate", s);
-	GM_setValue("ybcount", String(countNum + 1));
-	const elements = document.querySelectorAll('[class^="index_close"]');
-	Array.from(elements).forEach(v => v.click())
-	setTimeout(() => {
-		r();
-	}, 3e3)
+	const timerId = setInterval(() => {
+		const elements = document.querySelectorAll('[class^="index_close"]');
+        Array.from(elements).forEach(v => v.click());
+	}, 5e2)
+    setTimeout(() => {
+        clearInterval(timerId);
+    }, 8e3)
 }
 
 function ahhhhfs() {
@@ -53,7 +45,7 @@ function ahhhhfs() {
 		href = window.location.href;
 		if (href.indexOf('#') > 0) {
 			const newHref = href.split('#')[0];
-			window.location.href = newHref;	
+			window.location.href = newHref;
 			return;
 		}
 		const d = document.querySelector('.fc-message-root')
