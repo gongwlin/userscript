@@ -1,13 +1,14 @@
 // ==UserScript==
 // @name         安娜自动下载
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.3.6
+// @version      1.3.7
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @description  安娜自动下载
 // @author       gwl
-// @include      *://*annas-archive.org/slow_download/*
-// @include      *://*annas-archive.org/md5/*
+// @include      *://*annas-archive.*/slow_download/*
+// @include      *://*annas-archive.*/md5/*
+// @include      *://*z-library.*/book/*
 // @grant        GM_log
 // @grant        GM_addStyle
 // @grant        GM_setValue
@@ -41,13 +42,15 @@ const id2 = setInterval(() => {
     }
 }, 1e3)
 
-const yzm = setInterval(() => {
-    const dom = document.querySelector('.zone-name-title');
+const id3 = setInterval(() => {
+    const url = window.location.href;
+    if (!url.includes('z-library.sk/book/')) {
+        return
+    }
+    const dom = document.querySelector('.addDownloadedBook');
     if (!dom) {
         return
     }
-    GM_setClipboard('@@captchaxyz');
-    setTimeout(() => {
-        clearInterval(yzm)
-    }, 10e3)
-}, 2e3)
+    dom.click();
+    clearInterval(id3);
+}, 1e3)
