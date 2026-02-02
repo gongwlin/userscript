@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         安娜自动下载
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.3.7
+// @version      1.3.8
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/anna.user.js
 // @description  安娜自动下载
@@ -9,6 +9,7 @@
 // @include      *://*annas-archive.*/slow_download/*
 // @include      *://*annas-archive.*/md5/*
 // @include      *://*z-library.*/book/*
+// @include      *://*ft.com*
 // @grant        GM_log
 // @grant        GM_addStyle
 // @grant        GM_setValue
@@ -53,4 +54,16 @@ const id3 = setInterval(() => {
     }
     dom.click();
     clearInterval(id3);
+}, 1e3)
+
+const ft = setInterval(() => {
+    if (!/ft.com\//.test(window.location.href)) {
+        return
+    }
+    const dom = document.querySelector('.o-banner__close')
+    if (!dom) {
+        return
+    }
+    dom.click();
+    clearInterval(ft);
 }, 1e3)
