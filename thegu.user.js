@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         theguardian remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      0.0.1
+// @version      0.0.2
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/thegu.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/thegu.user.js
 // @description  theguardian remove
@@ -17,4 +17,6 @@
 // ==/UserScript==
 
 
-document.querySelectorAll('aside').forEach(v => v.remove())
+setInterval(() => {
+    document.querySelectorAll('aside').forEach(v => v.remove());
+}, 500)
