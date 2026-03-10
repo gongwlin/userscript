@@ -7,6 +7,7 @@
 // @description  小红书防沉迷，只展示前10个帖子
 // @author       gwl
 // @include      https://*xiaohongshu.com/explore*
+// @include      https://*rednote.com/explore*
 // @include      https://*bilibili.com*
 
 // @grant        GM_log
