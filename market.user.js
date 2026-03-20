@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         去除市场宽度的广告
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.1.3
+// @version      1.1.4
 // @author       gwl
 // @include        *://*legulegu.com/*
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/market.user.js
@@ -12,15 +12,13 @@
 
 function f () {
   const fn = () => {
-    const node = document.querySelector('#ad-individual-20s-1');
-    if (node) {
-      node.style.display = 'none'
-    }
-
-    const countDown = document.querySelector('#count-down-1');
-    if (countDown) {
-      countDown.style.display = 'none'
-    }
+    const arr = ['#ad-individual-20s-1', '#count-down-1', 'ins', '.lg-ad-side'].join(',');
+    const all = document.querySelectorAll(arr);
+    all.forEach(node => {
+        if (node) {
+            node.remove();
+        }
+    })
   }
 
    setTimeout(() => {
