@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.7
+// @version      1.0.8
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -60,7 +60,7 @@ function ahhhhfs() {
 
 function zhihu() {
     const href = window.location.href;
-	if (/zhihu\.com/.test(href)) {
+	if (!/zhihu\.com/.test(href)) {
 		return;
 	}
 
