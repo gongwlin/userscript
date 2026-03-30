@@ -1,14 +1,16 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.6
+// @version      1.0.7
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
 // @author       gwl
 // @include      *://*yuanbao.tencent.com/chat*
 // @include      *://*ahhhhfs.com/*
+// @include      *://*hunhepan.com/*
 // @include      *://*ebooksyard.com/*
+// @include      *://*zhihu.com/*
 
 
 
@@ -56,6 +58,20 @@ function ahhhhfs() {
 	}, 5e2)
 }
 
+function zhihu() {
+    const href = window.location.href;
+	if (/zhihu\.com/.test(href)) {
+		return;
+	}
+
+    setInterval(() => {
+        const doms = document.querySelectorAll('.TopstoryItem--advertCard');
+        Array.from(doms).forEach(v => { v.style.display = 'none' });
+    }, 1000);
+
+}
+
 yb();
 ahhhhfs();
+zhihu();
 
