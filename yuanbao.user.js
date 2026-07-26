@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         yuanbao remove
 // @namespace    https://github.com/gongwlin/userscript
-// @version      1.0.9
+// @version      1.1.0
 // @updateURL    https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @downloadURL  https://github.com/gongwlin/userscript/raw/main/yuanbao.user.js
 // @description  yuanbao remove
@@ -12,6 +12,9 @@
 // @include      *://*ebooksyard.com/*
 // @include      *://*zhihu.com/*
 // @include      *://*v2ex.com/*
+
+
+
 
 // @grant        GM_log
 // @grant        GM_addStyle
@@ -80,6 +83,8 @@ function v2ex() {
     const timerId = setInterval(() => {
         const doms = document.querySelectorAll('#Main .cell');
         Array.from(doms).forEach((v, i) => { if (i == 1) { v.style.display = 'none' } });
+        const insDom = document.querySelectorAll('ins.adsbygoogle');
+        Array.from(insDom).forEach((v, i) => { v.style.display = 'none'} );
     }, 1000);
 
 }
